@@ -8,6 +8,9 @@ import util
 import signal
 from effects import TrailEffect, FireEffect, RainbowEffect, ColorEffect, RainEffect
 import os
+from dotenv import load_dotenv
+
+load_dotenv('.env')
 
 # Constants for program
 
@@ -18,8 +21,8 @@ SHUTTER_NUM_LEDS = SHUTTER_NUM_COLUMNS * SHUTTERR_LED_PER_COL
 broker = 'localhost'
 port = 1883
 client_id = f'python-mqtt-{random.randint(0, 1000)}'
-username = os.environ['MQTT_USERNAME']
-password = os.environ['MQTT_PASSWD']
+username = os.getenv('MQTT_USERNAME')
+password = os.getenv('MQTT_PASSWD')
 
 # must be connected to D10, D12, D18 or D21 to work.
 pixel_pin = board.D18
