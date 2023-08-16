@@ -10,7 +10,7 @@ from effects import TrailEffect, FireEffect, RainbowEffect, ColorEffect, RainEff
 import os
 from dotenv import load_dotenv
 
-load_dotenv('.env')
+load_dotenv()
 
 # Constants for program
 
